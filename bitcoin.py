@@ -3,10 +3,10 @@ import requests
 
 if len(sys.argv) < 2:
    sys.exit("Missing command-line argument")
-elif sys.argv[1].isnumeric() == False:
-   sys.exit("Command-line argument is not a number")
-
-
+try:
+   demand  = float(sys.argv[1])
+except  ValueError:
+    sys.exit("Command-line argument is not a number")
 
 def main():
    # get bitcoin demand
